@@ -1,22 +1,10 @@
-/*
-const age = prompt("how old are you?"); // 입력: 25
+const age = parseInt(prompt("How old are you?")); // 글자(문자)를 입력할 경우 parseInt()는 NaN을 반환함.
 
-console.log(age)  // 출력: 25
-console.log(typeof age)  // 출력: string
+if(isNaN(age)) { // isNaN()은 age가 NaN일 경우, true를 반환함. 반면, NaN이 아닐 경우, false를 반환함.
+    console.log("plz write a number.") // 글자(문자)를 입력할 경우 출력함.
+} else {
+    console.log("Thanks for writing your age.") // 숫자를 입력할 경우 출력함.
+}
 
-ageNum = parseInt(age)
-console.log(ageNum)  // 출력: 25
-console.log(typeof ageNum)  // 출력: number
-*/
-
-/*
-const age = prompt("how old are you?"); // 입력: 김성진
-
-ageNum = parseInt(age)
-console.log(ageNum) // 출력: NaN (Not a Number)
-*/
-
-
-const age = prompt("how old are you?");  // 입력: 김성진
-
-console.log(age) // 출력: 김성진
+// 입력: 28      // 출력: Thanks for writing your age.
+// 입력: 김성진  // 출력: plz write a number.
