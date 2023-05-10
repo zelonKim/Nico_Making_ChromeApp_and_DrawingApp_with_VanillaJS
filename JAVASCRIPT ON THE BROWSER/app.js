@@ -1,46 +1,82 @@
-/*
-const elem = document.getElementById("hello") // HTML에서 id="hello"인 요소를 찾아서 가져옴.
-console.log(elem) // 출력: <h1 id="hello">Grab me</h1>
+/* 
+title = document.querySelector("#hello")
 
-elem.innerText = "how are you" // <h1 id="hello">how are you</h1>로 바꿔줌.
+title.style.color = 'green' // 요소의 글자색을 초록색으로 바꿈.
 
-console.log(elem.id)  // "hello"
-console.log(elem.className) // "niceToMeetYa"
-*/
-
-/*
-console.log(document.getElementsByClassName("Hi")) // HTMLCollection(4) [h2.hi, h2.hi, h3.hi, h3.hi]
-console.log(document.getElementsByClassName("Hi")[0]) // <h2 class="hi">hi steve</h2>
-
-
-console.log(document.getElementsByTagName("h2")) // HTMLCollection(2) [h2.hi, h2.hi]
-console.log(document.getElementsByTagName("h2")[0]) // <h2 class="hi">hi steve</h2>
-
-console.log(document.getElementsByTagName("h3")) // HTMLCollection(2) [h3.hi, h3.hi]
-console.log(document.getElementsByTagName("h3")[0]) // <h3 class="hi">hi ariana</h3>
+console.dir(title) 
 */
 
 
 /* 
-title = document.querySelector(".hello h2");
+title = document.querySelector("#hello")
 
-console.log(title) // <h2 class="Hi">hi steve</h2>
+function handleTitleClick() {
+    console.log("title was clicked!")
+}
+
+title.addEventListener("click", handleTitleClick)  
 */
 
 
 /* 
-title = document.querySelectorAll(".hello h2");
+title = document.querySelector("#hello")
 
-console.log(title)  // NodeList(2) [h2.Hi, h2.Hi]
+function handleTitleClick() {
+    title.style.color = "green"
+}
+
+title.addEventListener("click", handleTitleClick) 
 */
 
+/* 
+title = document.querySelector("#hello")
+
+function handleMouseEnter() {
+    console.log("mouse is here!");
+}
+
+title.addEventListener("mouseenter", handleMouseEnter); 
+*/
 
 /*
- title = document.querySelectorAll(".hello h2")[1];
+ title = document.querySelector("#hello")
 
-console.log(title) // <h2 class="Hi">hi john</h2>
+function handleTitleClick() {
+    console.log("title was clicked!")
+}
+
+title.onclick = handleTitleClick
+ */
+
+
+/* 
+title = document.querySelector("#hello")
+
+function handleMouseEnter() {
+    console.log("mouse is here!");
+}
+
+title.onmouseenter = handleMouseEnter;
 */
 
+/* 
+function handleWindowResize() {
+    document.body.style.backgroundColor = "tomato";
+}
 
+window.addEventListener("resize", handleWindowResize);
+*/
 
+/* 
+function handleWindowCopy() {
+    alert("copier!");
+}
 
+window.addEventListener("copy", handleWindowCopy)
+*/
+
+function handleWindowOffline() {
+    alert("no Wifi");
+}
+
+window.addEventListener("offline", handleWindowOffline)
