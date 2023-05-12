@@ -67,4 +67,41 @@ loginForm.addEventListener("submit", (e) => { // addEventListener의 콜백 함�
 });
 */
 
+/* 
+const link = document.querySelector("a");
 
+function handleLinkClick(e) {
+    e.preventDefault(); // 기본 동작(<a>태그의 링크된 페이지로 이동하는 것)을 막아줌.
+    console.log(e);
+}
+
+link.addEventListener("click", handleLinkClick);
+ */
+
+
+/* const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+
+function onLoginSubmit(e) {
+    e.preventDefault();
+    const userName = loginInput.value;
+    loginForm.classList.add("hidden");
+    console.log(userName);
+}
+loginForm.addEventListener("submit", onLoginSubmit); 
+// 로그인 폼을 제출하면 로그인 폼이 사라지고, 입력했던 유저네임이 콘솔창에 출력됨. */
+
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting") // <h1>태그를 가져옴.
+
+function onLoginSubmit(e) {
+    e.preventDefault();
+    loginForm.classList.add("hidden");
+    const userName = loginInput.value;
+    greeting.innerText = "Hello " + userName;
+    greeting.classList.remove("hidden");
+}
+loginForm.addEventListener("submit", onLoginSubmit); 
+// 로그인 폼을 제출하면 로그인 폼이 사라지고, 입력한 유저 네임이 <h1>에 표시됨.
