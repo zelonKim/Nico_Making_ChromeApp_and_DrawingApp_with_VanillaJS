@@ -100,8 +100,13 @@ function onLoginSubmit(e) {
     e.preventDefault();
     loginForm.classList.add("hidden");
     const userName = loginInput.value;
+    localStorage.setItem("UserName",userName); // 로컬 스토리지에 key와 value로 저장함.
     greeting.innerText = "Hello " + userName;
     greeting.classList.remove("hidden");
 }
 loginForm.addEventListener("submit", onLoginSubmit); 
 // 로그인 폼을 제출하면 로그인 폼이 사라지고, 입력한 유저 네임이 <h1>에 표시됨.
+
+
+
+
