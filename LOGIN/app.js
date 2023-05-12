@@ -78,8 +78,8 @@ function handleLinkClick(e) {
 link.addEventListener("click", handleLinkClick);
  */
 
-
-/* const loginForm = document.querySelector("#login-form");
+/* 
+const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 
 function onLoginSubmit(e) {
@@ -89,24 +89,64 @@ function onLoginSubmit(e) {
     console.log(userName);
 }
 loginForm.addEventListener("submit", onLoginSubmit); 
-// 로그인 폼을 제출하면 로그인 폼이 사라지고, 입력했던 유저네임이 콘솔창에 출력됨. */
+// 로그인 폼을 제출하면 로그인 폼이 사라지고, 입력했던 유저네임이 콘솔창에 출력됨.
+ */
 
 
+/* 
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting") // <h1>태그를 가져옴.
+
+function paintGreetings(username) { // 유저네임을 <h1>태그에 보여주는 함수
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove("hidden");
+}
 
 function onLoginSubmit(e) {
     e.preventDefault();
     loginForm.classList.add("hidden");
     const userName = loginInput.value;
     localStorage.setItem("UserName",userName); // 로컬 스토리지에 key와 value로 저장함.
-    greeting.innerText = "Hello " + userName;
+    paintGreetings(userName)
+}
+
+const savedUserName = localStorage.getItem("UserName")
+console.log(savedUserName) // UserName키의 값이 없을 경우, null이 출력됨.
+
+if (savedUserName === null) {
+    loginForm.classList.remove("hidden");
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    paintGreetings(savedUserName)
+} 
+*/
+
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting") // <h1>태그를 가져옴.
+
+username = localStorage.getItem("UserName")
+
+function onLoginSubmit(e) {
+    e.preventDefault();
+    loginForm.classList.add("hidden");
+    localStorage.setItem("UserName",loginInput.value); // 로컬 스토리지에 key와 value로 저장함.
+    paintGreetings()
+}
+
+function paintGreetings() { // 유저네임을 <h1>태그에 보여주는 함수
+    username = localStorage.getItem("UserName")
+    greeting.innerText = `Hello ${username}`;
     greeting.classList.remove("hidden");
 }
-loginForm.addEventListener("submit", onLoginSubmit); 
-// 로그인 폼을 제출하면 로그인 폼이 사라지고, 입력한 유저 네임이 <h1>에 표시됨.
 
-
+if (username === null) {
+    loginForm.classList.remove("hidden");
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    paintGreetings()
+}
 
 
